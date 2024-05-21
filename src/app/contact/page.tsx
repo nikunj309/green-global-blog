@@ -104,7 +104,7 @@ const page = () => {
                 className="appearance-none border border-black w-full py-2 px-3 text-gray-700 leading-tight md:py-4"
                 id="message"
                 placeholder="Enter Your Message..."
-                rows="4"
+                rows={4}
               />
             </div>
             <div className="flex items-center justify-center">
