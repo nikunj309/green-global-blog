@@ -12,6 +12,7 @@ import rubber_waste_management_solutions from '@/assets/ServicesScreenImages/rub
 import projects_advertising from '@/assets/ServicesScreenImages/projects_advertising.png';
 import projects_installation from '@/assets/ServicesScreenImages/projects_installation.png';
 import imagesrc from "@/assets/ServicesScreenImages/modern-equipped-computer-lab(1).jpg";
+import Link from 'next/link';
 
 const page = () => {
 
@@ -37,7 +38,9 @@ const page = () => {
         <div className="w-full mt-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
+             
               <ServicesCard key={index} icon={service.icon} title={service.title} description={service.description} />
+         
             ))}
           </div>
         </div>
