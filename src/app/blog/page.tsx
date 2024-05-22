@@ -12,9 +12,6 @@ import blogFigure2 from "@/assets/blogpageImages/blogFigure (2).png";
 import blogFigure3 from "@/assets/blogpageImages/blogFigure (3).png";
 import blogFigure4 from "@/assets/blogpageImages/blogFigure (4).png";
 import profile from "@/assets/blogpageImages/profile.png";
-import Artical from "@/assets/blogpageImages/Article.png";
-
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import CommonHeroSectionCard from "@/components/CommonHeroSectionCard";
 
@@ -46,11 +43,7 @@ const page = () => {
             imageSrc: blogFigure3,
         },
     ];
-    const [selectedDate, setSelectedDate] = useState(null);
-
-    const handleDateChange = (date: any) => {
-        setSelectedDate(date);
-    };
+   
 
 
     return (
