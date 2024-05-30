@@ -2,7 +2,7 @@
 import { CldUploadButton, CloudinaryUploadWidgetResults } from 'next-cloudinary'
 import React, { useState } from 'react'
 
-const page = () => {
+const Page = () => {
     const [slug, setSlug] = useState('');
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
@@ -87,4 +87,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

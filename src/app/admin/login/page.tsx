@@ -83,7 +83,7 @@ const Page = () => {
                     </button>
                 </form>
                 <p className="text-sm text-center text-gray-600">
-                    Don't have an account? <a href="#" className="text-indigo-600 hover:underline">Sign up</a>
+                    Don not have an account? <a href="#" className="text-indigo-600 hover:underline">Sign up</a>
                 </p>
             </div>
         </div>
