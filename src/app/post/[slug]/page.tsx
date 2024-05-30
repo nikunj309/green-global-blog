@@ -12,7 +12,7 @@ import React, { useEffect, useState } from 'react'
 //     return res.json();
 // }
 
-const Page = ({ params }) => {
+const Page = ({ params }: { params: { slug: string } }) => {
     const { slug } = params;
     // const data = await getData(slug);
     const [post, setPost] = useState(null);

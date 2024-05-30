@@ -6,7 +6,7 @@ import { CldUploadButton, CloudinaryUploadWidgetResults } from 'next-cloudinary'
 import axios from 'axios';
 import BlogForm from '@/components/AdminCmt/BlogForm';
 
-const EditBlog = ({params}) => {
+const EditBlog = ({params}: { params: { slug: string } }) => {
     const router = useRouter();
     // const searchParams = useSearchParams();
     // const postId = searchParams.get('id');
