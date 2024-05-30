@@ -10,7 +10,6 @@ export async function GET(req: any, res: NextApiResponse) {
         const recentPosts = await PostModel.find()
         .sort({ createdAt: -1 })  // Sort by creation date in descending order
         .limit(3)  
-        .populate('author');  
 
         return NextResponse.json({
             success: true,
