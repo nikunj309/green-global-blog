@@ -34,7 +34,12 @@ async function dbConnect(): Promise<void> {
     }
 
     try {
-        const db = await mongoose.connect(process.env.MONGO_URI || '', {});
+        const db = await mongoose.connect(process.env.MONGO_URI || '', {
+            
+            bufferCommands: false, // Disable command buffering
+            serverSelectionTimeoutMS: 30000,
+            socketTimeoutMS: 30000,
+        });
 
         connection.isConnected = db.connections[0].readyState;
         console.log('Database connected successfully');

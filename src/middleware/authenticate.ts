@@ -25,3 +25,15 @@ export async function authenticate(req: AuthenticatedRequest, res: NextApiRespon
     return NextResponse.json({message: 'Unauthorized'}, {status: 401})
   }
 }
+
+export async function middleware(req: NextApiRequest, res: NextApiResponse, next:() => void) {
+  const protectedRoutes = ['/admin', '/admin/dashboard']; // List of protected routes
+
+  if (protectedRoutes.includes(req.nextUrl.pathname)) {
+    return await authenticate(req, res, next);
+  }
+
+  return NextResponse.next(); // Pass through unprotected routes
+}
+
+

@@ -7,7 +7,10 @@ export interface Post {
     desc: string;
     image1: string;
     image2: string;
+    category: string;
     author: Types.ObjectId | User;
+    createdAt?: Date;
+    updatedAt?: Date;
 
 }
 
@@ -33,10 +36,17 @@ const PostSchema: Schema<Post> = new mongoose.Schema({
         type: String,
         required: [true, 'Image is required'],
     },
+    category: {
+        type: String,
+        required: [true, 'Category is required'],
+    },
     author: {
         type: Schema.Types.ObjectId,
         ref: "User"
-    }
+    },
+
+}, {
+    timestamps: true  // This will add `createdAt` and `updatedAt` fields automatically
 })
 
 const PostModel = (mongoose.models.Post as mongoose.Model<Post>) || mongoose.model<Post>('Post', PostSchema);

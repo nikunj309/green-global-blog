@@ -11,7 +11,7 @@ import rubber_recycling_equipment_sales from '@/assets/ServicesScreenImages/rubb
 import rubber_waste_management_solutions from '@/assets/ServicesScreenImages/rubber_waste_management_solutions.png';
 import projects_advertising from '@/assets/ServicesScreenImages/projects_advertising.png';
 import projects_installation from '@/assets/ServicesScreenImages/projects_installation.png';
-import imagesrc from "@/assets/ServicesScreenImages/modern-equipped-computer-lab(1).jpg";
+import imagesrc1 from "@/assets/ProductScreenImages/modern-equipped-computer-lab.jpg";
 import Link from 'next/link';
 
 const page = () => {
@@ -33,7 +33,7 @@ const page = () => {
 
   return (
     <>
-      <CommonHeroSectionCard title={title} imageSrc={imagesrc} description={description} />
+      <CommonHeroSectionCard title={title} imageSrc={imagesrc1} description={description} />
       <main className="flex justify-center items-center flex-col p-8">
         <div className="w-full mt-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

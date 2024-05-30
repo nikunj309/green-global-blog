@@ -92,22 +92,22 @@ const Footer = () => {
                     <nav className='text-white'>
                         <ul className='flex flex-row sm:flex-row justify-center gap-4 sm:gap-10 text-sm sm:text-lg font-medium'>
                             <li>
-                                <a href="#home" className='hover:text-blue-600 hover:underline transition duration-300'>Home</a>
+                                <a href="/" className='hover:text-blue-600 hover:underline transition duration-300'>Home</a>
                             </li>
                             <li>
-                                <a href="#product" className='hover:text-blue-600 hover:underline transition duration-300'>Product</a>
+                                <a href="/product" className='hover:text-blue-600 hover:underline transition duration-300'>Product</a>
                             </li>
                             <li>
-                                <a href="#services" className='hover:text-blue-600 hover:underline transition duration-300'>Services</a>
+                                <a href="/services" className='hover:text-blue-600 hover:underline transition duration-300'>Services</a>
                             </li>
                             <li>
-                                <a href="#blog" className='hover:text-blue-600 hover:underline transition duration-300'>Blog</a>
+                                <a href="/post" className='hover:text-blue-600 hover:underline transition duration-300'>Blog</a>
                             </li>
                             <li>
-                                <a href="#about-us" className='hover:text-blue-600 hover:underline transition duration-300'>About Us</a>
+                                <a href="/about" className='hover:text-blue-600 hover:underline transition duration-300'>About Us</a>
                             </li>
                             <li>
-                                <a href="#contact" className='hover:text-blue-600 hover:underline transition duration-300'>Contact</a>
+                                <a href="/contact" className='hover:text-blue-600 hover:underline transition duration-300'>Contact</a>
                             </li>
                         </ul>
                     </nav>
