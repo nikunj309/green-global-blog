@@ -33,7 +33,7 @@ import dbConnect from "@/utils/dbConnection";
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 
-export  async function GET(req: NextApiRequest, res: NextApiResponse) {
+export  async function GET(req: Request, res: NextApiResponse) {
  await dbConnect()
   
     // const { searchParams } = new URL(req.url);
