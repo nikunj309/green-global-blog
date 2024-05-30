@@ -1,7 +1,7 @@
 import AdminLayout from '@/components/AdminCmt/AdminLayout';
 import React from 'react';
 
-const AdminDashboard = () => {
+const Page = () => {
   return (
     <AdminLayout>
       <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
@@ -10,4 +10,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default Page;
