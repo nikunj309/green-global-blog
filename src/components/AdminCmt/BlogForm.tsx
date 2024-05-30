@@ -7,6 +7,7 @@ import axios from 'axios';
 interface BlogFormProps {
     initialData?: {
         // slug: string;
+        id: string
         title: string;
         desc: string;
         image1: string;
