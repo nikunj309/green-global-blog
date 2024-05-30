@@ -21,11 +21,11 @@ import Pagination from "@/components/blogPageCmp/Pagination";
 import axios from "axios";
 
 const Page = ({ searchParams }: any) => {
-    const [posts, setPosts] = useState([]);
-    const [count, setCount] = useState();
+    const [posts, setPosts] = useState<any>([]);
+    const [count, setCount] = useState<any>();
     const page = parseInt(searchParams.page) || 1
     const [loading, setLoading] = useState(true);
-    const [recentPosts, setRecentPosts] = useState([]);
+    const [recentPosts, setRecentPosts] = useState<any>([]);
     const title = "Blog";
     const description =
         "Explore Expert Perspectives and Industry Trends in Rubber Recycling and Sustainable Practices";
@@ -85,7 +85,7 @@ const Page = ({ searchParams }: any) => {
             <main className="flex flex-col md:flex-row justify-center md:p-8 max-md:mt-8 max-md:max-w-full">
                 <div className="flex flex-col items-center justify-center mt-16 ">
 
-                    {posts.map((article, index) => (
+                    {posts.map((article:any, index:any) => (
                         <Article key={index} article={article} />
                     ))}
 
@@ -126,7 +126,7 @@ const Page = ({ searchParams }: any) => {
                         </h2>
                         <div className=" mt-3 bg-zinc-800 h-1 w-14 mb-5" />
                         <div className="flex flex-col gap-8 mt-9 text-sm">
-                            {recentPosts.map((post) => (
+                            {recentPosts.map((post:any) => (
                                 <div key={post.title} className="flex items-center gap-5">
                                     <Image src={post.image1} alt={post.title} width={50} height={50} />
                                     <div className="flex flex-col gap-4">

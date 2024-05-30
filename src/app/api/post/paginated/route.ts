@@ -61,14 +61,29 @@ export  async function GET(req: Request, res: NextApiResponse) {
     // }
   
         const { searchParams } = new URL(req.url);
+        const pageString = searchParams.get("page"); // Get the value as a string
+        let page: number | null;
+        
+        if (pageString) {
+          // Convert the string to a number (if valid)
+          page = Number(pageString);
+        } else {
+          // Set page to null if the parameter is missing
+          page = null;
+        }
+        
+        const POST_PER_PAGE = 4;
+        const query = {
+          take: POST_PER_PAGE,
+          skip: (page ?? 0) * POST_PER_PAGE, // Use nullish coalescing for default value
+        };
+    // const page = searchParams.get("page");
 
-    const page = searchParams.get("page");
-
-    const POST_PER_PAGE = 4;
-    const query = {
-        take: POST_PER_PAGE,
-        skip: POST_PER_PAGE * (page - 1),
-    }
+    // const POST_PER_PAGE = 4;
+    // const query = {
+    //     take: POST_PER_PAGE,
+    //     skip: POST_PER_PAGE * (page - 1),
+    // }
 
     try {
         const posts = await PostModel.find({})

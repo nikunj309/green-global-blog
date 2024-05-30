@@ -2,20 +2,17 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
-// const getData = async (slug) => {
-//     const res = await fetch(`/api/post/${slug}`, {
-//         cache: "no-store"
-//     })
-//     if (!res.ok) {
-//         throw new Error("Failed")
-//     }
-//     return res.json();
-// }
+interface Post {
+    title: string;
+    category: string;
+    image2: string; // Assuming image2 is a URL
+    desc: string; // Add the desc property
+  }
 
 const Page = ({ params }: { params: { slug: string } }) => {
     const { slug } = params;
     // const data = await getData(slug);
-    const [post, setPost] = useState(null);
+    const [post, setPost] = useState<any>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
