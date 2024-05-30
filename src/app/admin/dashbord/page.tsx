@@ -5,8 +5,15 @@ import PostCard from '@/components/AdminCmt/PostCard';
 import AdminLayout from '@/components/AdminCmt/AdminLayout';
 import { useRouter } from 'next/navigation';
 
+interface Post {
+    _id: string;
+    slug: string
+  }
+  
+
+
 const Admin = () => {
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState<Post[]>([]);
     const router = useRouter()
 
     useEffect(() => {
@@ -41,7 +48,7 @@ const Admin = () => {
         <AdminLayout>
        <div className="container mx-auto px-4 py-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    {posts.map((post) => (
+                    {posts?.length > 0 && posts.map((post) => (
                         <div key={post._id}>
                             <PostCard post={post} onDelete={() => handleDelete(post._id)} onEdit={() => handleEdit(post.slug)} />
                         </div>
