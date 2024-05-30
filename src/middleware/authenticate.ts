@@ -26,7 +26,7 @@ export async function authenticate(req: AuthenticatedRequest, res: NextApiRespon
   }
 }
 
-export async function middleware(req: NextApiRequest, res: NextApiResponse, next:() => void) {
+export async function middleware(req: any, res: NextApiResponse, next:() => void) {
   const protectedRoutes = ['/admin', '/admin/dashboard']; // List of protected routes
 
   if (protectedRoutes.includes(req.nextUrl.pathname)) {
