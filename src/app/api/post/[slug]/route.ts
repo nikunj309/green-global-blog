@@ -2,7 +2,7 @@ import dbConnect from '@/utils/dbConnection';
 import PostModel from '@/models/postModel';
 import { NextResponse } from 'next/server';
 
-export const GET = async (req, { params }) => {
+export const GET = async (req:any, { params }: { params: { slug: string } }) => {
     await dbConnect();
 
     const { slug } = params;
@@ -32,7 +32,7 @@ export const GET = async (req, { params }) => {
 
 
 
-export async function PATCH(req: any, { params }) {
+export async function PATCH(req: any) {
 
     await dbConnect();
     const { id } = req.query;

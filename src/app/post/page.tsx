@@ -20,7 +20,7 @@ import ProfileSection from "@/components/blogPageCmp/ProfileSection";
 import Pagination from "@/components/blogPageCmp/Pagination";
 import axios from "axios";
 
-const Page = ({ searchParams }) => {
+const Page = ({ searchParams }: any) => {
     const [posts, setPosts] = useState([]);
     const [count, setCount] = useState();
     const page = parseInt(searchParams.page) || 1
