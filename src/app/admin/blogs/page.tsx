@@ -6,82 +6,82 @@ import { CldUploadButton, CloudinaryUploadWidgetResults } from 'next-cloudinary'
 import BlogForm from '@/components/AdminCmt/BlogForm';
 
 const NewBlog = () => {
-    const [title, setTitle] = useState('');
-    const [slug, setSlug] = useState('');
-    const [desc, setDescription] = useState('');
-    const [image1, setImage1] = useState(null);
-    const [image2, setImage2] = useState(null);
-    const [category, setCategory] = useState('');
-    const [publicId, setPublicId] = useState("");
-    const [publicId2, setPublicId2] = useState("");
+    // const [title, setTitle] = useState('');
+    // const [slug, setSlug] = useState('');
+    // const [desc, setDescription] = useState('');
+    // const [image1, setImage1] = useState(null);
+    // const [image2, setImage2] = useState(null);
+    // const [category, setCategory] = useState('');
+    // const [publicId, setPublicId] = useState("");
+    // const [publicId2, setPublicId2] = useState("");
 
-    const router = useRouter();
+    // const router = useRouter();
 
-    const handleImageUpload1 = (result: CloudinaryUploadWidgetResults) => {
-        console.log("result: ", result);
-        const info = result.info as object;
+    // const handleImageUpload1 = (result: CloudinaryUploadWidgetResults) => {
+    //     console.log("result: ", result);
+    //     const info = result.info as object;
 
-        if ("secure_url" in info && "public_id" in info) {
-            const url = info.secure_url as string;
-            const public_id = info.public_id as string;
-            setImage1(url);
-            setPublicId(public_id);
-            console.log("url: ", url);
-            console.log("public_id: ", public_id);
-        }
-    };
-    const handleImageUpload2 = (result: CloudinaryUploadWidgetResults) => {
-        console.log("result: ", result);
-        const info = result.info as object;
+    //     if ("secure_url" in info && "public_id" in info) {
+    //         const url = info.secure_url as string;
+    //         const public_id = info.public_id as string;
+    //         setImage1(url);
+    //         setPublicId(public_id);
+    //         console.log("url: ", url);
+    //         console.log("public_id: ", public_id);
+    //     }
+    // };
+    // const handleImageUpload2 = (result: CloudinaryUploadWidgetResults) => {
+    //     console.log("result: ", result);
+    //     const info = result.info as object;
 
-        if ("secure_url" in info && "public_id" in info) {
-            const url = info.secure_url as string;
-            const public_id = info.public_id as string;
-            setImage2(url);
-            setPublicId2(public_id);
-            console.log("url: ", url);
-            console.log("public_id: ", public_id);
-        }
-    };
+    //     if ("secure_url" in info && "public_id" in info) {
+    //         const url = info.secure_url as string;
+    //         const public_id = info.public_id as string;
+    //         setImage2(url);
+    //         setPublicId2(public_id);
+    //         console.log("url: ", url);
+    //         console.log("public_id: ", public_id);
+    //     }
+    // };
 
-    const slugify = (str: string) =>
+    // const slugify = (str: string) =>
          
-        str
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, "")
-            .replace(/[\s_-]+/g, "-")
-            .replace(/^-+|-+$/g, "");
+    //     str
+    //         .toLowerCase()
+    //         .trim()
+    //         .replace(/[^\w\s-]/g, "")
+    //         .replace(/[\s_-]+/g, "-")
+    //         .replace(/^-+|-+$/g, "");
 
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
 
-        try {
-            const response = await fetch('/api/post', {
-                method: 'POST',
-                body: JSON.stringify({
-                    title,
-                    slug:slugify(title),
-                    desc,
-                    image1,
-                    image2,
-                    category
-                })
-            });
+    //     try {
+    //         const response = await fetch('/api/post', {
+    //             method: 'POST',
+    //             body: JSON.stringify({
+    //                 title,
+    //                 slug:slugify(title),
+    //                 desc,
+    //                 image1,
+    //                 image2,
+    //                 category
+    //             })
+    //         });
 
-            if (response.ok) {
-                router.push('/'); // Redirect on success
-            } else {
-                // Handle non-2xx response status codes
-                const errorData = await response.json();
-                throw new Error(errorData.error || 'An error occurred'); // Provide a more informative error message
-            }
-        } catch (error) {
-            console.error('Error creating post:', error);
-            // Display an error message to the user (optional)
-        }
-    };
+    //         if (response.ok) {
+    //             router.push('/'); // Redirect on success
+    //         } else {
+    //             // Handle non-2xx response status codes
+    //             const errorData = await response.json();
+    //             throw new Error(errorData.error || 'An error occurred'); // Provide a more informative error message
+    //         }
+    //     } catch (error) {
+    //         console.error('Error creating post:', error);
+    //         // Display an error message to the user (optional)
+    //     }
+    // };
 
     return (
         <AdminLayout>
