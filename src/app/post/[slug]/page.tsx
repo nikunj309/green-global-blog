@@ -12,7 +12,7 @@ import React, { useEffect, useState } from 'react'
 //     return res.json();
 // }
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
     const { slug } = params;
     // const data = await getData(slug);
     const [post, setPost] = useState(null);
@@ -59,4 +59,4 @@ const page = ({ params }) => {
     )
 }
 
-export default page
+export default Page
