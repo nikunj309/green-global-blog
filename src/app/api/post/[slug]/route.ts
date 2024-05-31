@@ -32,19 +32,23 @@ export const GET = async (req:any, { params }: { params: { slug: string } }) => 
 
 
 
-export async function PATCH(req: any) {
+export async function PATCH(req: any,{ params }: { params: { slug: string } }) {
 
     await dbConnect();
-    const { id } = req.query;
+    // const { id } = req.query;
+    const { slug } = params;
+    console.log(params);
+    
+    const id = slug; 
     try {
         // const { id } = params;
 
         const body = await req.json();
         const { slug, title, desc, image1, image2, category } = body;
 
-        if (!slug || !title || !desc || !image1 || !image2 || !category) {
-            return NextResponse.json({ error: "All fields are requied" }, { status: 500 })
-        }
+        // if (!slug || !title || !desc || !image1 || !image2 || !category) {
+        //     return NextResponse.json({ error: "All fields are requied" }, { status: 500 })
+        // }
 
         const updatedPost = await PostModel.findByIdAndUpdate(
             id,

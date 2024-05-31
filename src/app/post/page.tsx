@@ -21,7 +21,7 @@ import Pagination from "@/components/blogPageCmp/Pagination";
 import axios from "axios";
 
 const Page = ({ searchParams }: any) => {
-    const [posts, setPosts] = useState<any>([]);
+    const [posts, setPosts] = useState(null);
     const [count, setCount] = useState<any>();
     const page = parseInt(searchParams.page) || 1
     const [loading, setLoading] = useState(true);
@@ -39,6 +39,7 @@ const Page = ({ searchParams }: any) => {
                     throw new Error('Failed to fetch data');
                 }
                 const data = await response.json();
+                console.log("--------------------",data)
                 setPosts(data.posts);
                 setCount(data.count)
             } catch (error) {
@@ -64,8 +65,8 @@ const Page = ({ searchParams }: any) => {
         };
 
         fetchRecentPosts();
-
         fetchPosts();
+
     }, [count, page]);
 
     if (loading) {

@@ -26,7 +26,7 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
     const [image2, setImage2] = useState('');
     const [category, setCategory] = useState('');
 
-    // const router = useRouter();
+    const router = useRouter();
 
     useEffect(() => {
         if (initialData) {
@@ -38,7 +38,6 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
         }
     }, [initialData]);
 
-    const router = useRouter();
 
     const handleImageUpload1 = (result: any) => {
         const info = result.info as object;
@@ -47,9 +46,6 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
             const url = info.secure_url as string;
             const public_id = info.public_id as string;
             setImage1(url);
-            // setPublicId(public_id);
-            // console.log("url: ", url);
-            // console.log("public_id: ", public_id);
         }
     };
 
@@ -60,9 +56,6 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
             const url = info.secure_url as string;
             const public_id = info.public_id as string;
             setImage2(url);
-            // setPublicId2(public_id);
-            // console.log("url: ", url);
-            // console.log("public_id: ", public_id);
         }
     };
 
@@ -105,7 +98,7 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
     };
 
     const handleUpdate = async() => {
-        if (!initialData) return;
+       
         const updateData = {
             title,
             slug: slugify(title),
@@ -115,6 +108,8 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
             category
         };
 
+        console.log("-------------------",updateData);
+        
         try {
             const response = await fetch(`/api/post/${initialData.id}`, {
                 method: 'PATCH', 

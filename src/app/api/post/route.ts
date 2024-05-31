@@ -25,7 +25,7 @@ export async function GET(req: any, res: NextApiResponse) {
     await dbConnect();
 
     try {
-        const posts = await PostModel.find().populate('author'); // Assuming 'author' is a reference to a user in your PostModel schema
+        const posts = await PostModel.find() // Assuming 'author' is a reference to a user in your PostModel schema
 
         return NextResponse.json({
             success: true,
