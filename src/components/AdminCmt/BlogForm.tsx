@@ -1,13 +1,10 @@
-// components/BlogForm.tsx
 import React, { useState, useEffect } from 'react';
-import { CldUploadButton } from 'next-cloudinary'; // Adjust the import as per your setup
+import { CldUploadButton } from 'next-cloudinary';
 import { useRouter } from 'next/navigation';
-import axios from 'axios';
 
 interface BlogFormProps {
     initialData?: {
-        // slug: string;
-        id: string
+        id: string;
         title: string;
         desc: string;
         image1: string;
@@ -18,15 +15,13 @@ interface BlogFormProps {
 }
 
 const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
-    // console.log(initialData);
-    
     const [title, setTitle] = useState('');
     const [desc, setDescription] = useState('');
     const [image1, setImage1] = useState('');
     const [image2, setImage2] = useState('');
     const [category, setCategory] = useState('');
 
-    // const router = useRouter();
+    const router = useRouter();
 
     useEffect(() => {
         if (initialData) {
@@ -38,87 +33,32 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
         }
     }, [initialData]);
 
-    const router = useRouter();
-
     const handleImageUpload1 = (result: any) => {
-        const info = result.info as object;
-
-        if ("secure_url" in info && "public_id" in info) {
-            const url = info.secure_url as string;
-            const public_id = info.public_id as string;
-            setImage1(url);
-            // setPublicId(public_id);
-            // console.log("url: ", url);
-            // console.log("public_id: ", public_id);
-        }
+        const info = result.info as { secure_url: string, public_id: string };
+        setImage1(info.secure_url);
     };
 
     const handleImageUpload2 = (result: any) => {
-        const info = result.info as object;
-
-        if ("secure_url" in info && "public_id" in info) {
-            const url = info.secure_url as string;
-            const public_id = info.public_id as string;
-            setImage2(url);
-            // setPublicId2(public_id);
-            // console.log("url: ", url);
-            // console.log("public_id: ", public_id);
-        }
+        const info = result.info as { secure_url: string, public_id: string };
+        setImage2(info.secure_url);
     };
 
     const slugify = (str: string) =>
-
-        str
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, "")
-            .replace(/[\s_-]+/g, "-")
-            .replace(/^-+|-+$/g, "");
+        str.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/[\s_-]+/g, "-").replace(/^-+|-+$/g, "");
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-       
-            try {
-                const response = await fetch('/api/post', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        title,
-                        slug: slugify(title),
-                        desc,
-                        image1,
-                        image2,
-                        category
-                    })
-                });
-
-                if (response.ok) {
-                    router.push('/');
-                } else {
-                    const errorData = await response.json();
-                    throw new Error(errorData.error || 'An error occurred'); 
-                }
-            } catch (error) {
-                console.error('Error creating post:', error);
-            }
-        
-
-    };
-
-    const handleUpdate = async() => {
-        if (!initialData) return;
-        const updateData = {
-            title,
-            slug: slugify(title),
-            desc,
-            image1,
-            image2,
-            category
-        };
-
         try {
-            const response = await fetch(`/api/post/${initialData.id}`, {
-                method: 'PATCH', 
-                body: JSON.stringify(updateData),
+            const response = await fetch('/api/post', {
+                method: 'POST',
+                body: JSON.stringify({
+                    title,
+                    slug: slugify(title),
+                    desc,
+                    image1,
+                    image2,
+                    category
+                }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -131,9 +71,41 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
                 throw new Error(errorData.error || 'An error occurred');
             }
         } catch (error) {
+            console.error('Error creating post:', error);
+        }
+    };
+
+    const handleUpdate = async () => {
+        if (!initialData) return;
+
+        const updateData = {
+            title,
+            slug: slugify(title),
+            desc,
+            image1,
+            image2,
+            category
+        };
+
+        try {
+            const response = await fetch(`/api/post/${initialData.id}`, {
+                method: 'PATCH',
+                body: JSON.stringify(updateData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+                console.log(response)
+            if (response.ok) {
+                router.push('/');
+            } else {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'An error occurred');
+            }
+        } catch (error) {
             console.error('Error updating post:', error);
         }
-    }
+    };
 
     return (
         <div className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-md">

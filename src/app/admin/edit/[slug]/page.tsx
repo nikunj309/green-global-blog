@@ -37,7 +37,7 @@ const EditBlog = ({params}: { params: { slug: string } }) => {
     const fetchPost = async () => {
         try {
             const response = await axios.get(`/api/post/${slug}`);
-            console.log(response.data);
+            // console.log(response.data);
             
             setInitialData({
                 slug:response.data.slug,
