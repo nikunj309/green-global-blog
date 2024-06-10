@@ -4,6 +4,7 @@ import axios from 'axios';
 import PostCard from '@/components/AdminCmt/PostCard';
 import AdminLayout from '@/components/AdminCmt/AdminLayout';
 import { useRouter } from 'next/navigation';
+import { getDataFromToken } from '@/helpers/getDataFromToken';
 
 interface Post {
     _id: string;
@@ -16,9 +17,39 @@ const Admin = () => {
     const [posts, setPosts] = useState<Post[]>([]);
     const router = useRouter()
 
+    // useEffect(() => {
+     
+    //     const token = localStorage.getItem("token");
+    //     if (!token) {
+    //       router.push("/"); // Redirect to user dashboard if token is found
+    //       return;
+    //     }
+    //   }, []);
+
     useEffect(() => {
-        fetchPosts();
+        const token = localStorage.getItem("token");
+        console.log(token);
+        
+        if (!token) {
+          router.push("/"); // Redirect to user dashboard if token is found
+          return;
+        }else {
+            fetchPosts();
+        }
     }, []);
+
+    // const AuthenticateUser = async () => {
+    //     try {
+    //         const response = await fetch('/api/users/me')
+    //         console.log(response);
+    //         setResponse(response)
+            
+    //     } catch (error) {
+    //         console.log("error while fetch me routes");
+            
+    //     }
+    // }
+
 
     const fetchPosts = async () => {
         try {
@@ -59,4 +90,4 @@ const Admin = () => {
     );
 };
 
-export default Admin;
+export default  Admin;

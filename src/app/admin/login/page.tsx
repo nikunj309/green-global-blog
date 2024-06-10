@@ -1,6 +1,7 @@
 "use client"
+import { authenticate } from '@/middleware/authenticate';
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Page = () => {
     const [email, setEmail] = useState('');
@@ -9,6 +10,15 @@ const Page = () => {
     const [loading, setLoading] = useState(false);
 
     const router = useRouter();
+
+    useEffect(() => {
+     
+        const token = localStorage.getItem("token");
+        if (!!token) {
+          router.push("/admin/dashbord"); // Redirect to user dashboard if token is found
+          return;
+        }
+      }, []);
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -30,6 +40,7 @@ const Page = () => {
 
             const data = await response.json();
             console.log('Login successful:', data);
+            localStorage.setItem("token",data.token)
             router.push('/admin')
             // Handle successful login (e.g., redirect to a protected page)
         } catch (error: any) {

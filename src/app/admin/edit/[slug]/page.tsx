@@ -31,6 +31,15 @@ const EditBlog = ({params}: { params: { slug: string } }) => {
     });
 
     useEffect(() => {
+     
+        const token = localStorage.getItem("token");
+        if (!token) {
+          router.push("/"); // Redirect to user dashboard if token is found
+          return;
+        }
+      }, []);
+
+    useEffect(() => {
         fetchPost();
     }, []);
 

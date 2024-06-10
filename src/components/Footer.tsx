@@ -80,6 +80,9 @@
 import Image from 'next/image';
 import React from 'react';
 import i1 from '../../public/green-logo.png';
+import Link from 'next/link';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
     return (
@@ -119,7 +122,9 @@ const Footer = () => {
                         <p className='font-medium font-inter text-xl sm:text-2xl mb-2'>What we Offer</p>
                         <div className='bg-[#323232] h-1 w-24 mb-2'></div>
                         <p className='font-normal opacity-45 font-inter text-xs sm:text-sm w-[80%] mb-4'>World-class waste management and environmental protection system that benefits both the community and the environment</p>
+                        <Link href='/contact'>
                         <button className={`bg-[#323232] w-48 hover:bg-[#ffffff] text-white hover:text-black hover:border-2 font-bold py-2 px-4 rounded shadow-md`}>Contact Now</button>
+                        </Link>
                     </div>
                     {/* Section 2: Contact Us */}
                     <div className='flex flex-col text-white mb-8 sm:mr-8'>
@@ -128,8 +133,17 @@ const Footer = () => {
                         <p className='font-normal opacity-45 font-inter text-xs sm:text-sm w-full '>+91 98799 48500</p>
                         <p className='font-normal opacity-45 font-inter text-xs mt-4'>info@greenglobaltechnologies.in</p>
                         <p className='font-normal opacity-45 font-inter text-xs mt-4 w-[50%]'>Green Global Technologies, Moje Pratapnagar, Ta: Savli, Dis: Vadodara, Gujarat - 391520</p>
-
-                        {/* Add other contact information */}
+                        <div className='flex items-center gap-6 mt-3'>
+                            <Link href='https://www.facebook.com/profile.php?id=61558428737488'>
+                                <FaFacebook size={20} className='sm:size-30' />
+                            </Link>
+                            <Link href='https://www.instagram.com/greenglobaltechnologies/'>
+                                <FaInstagram size={20} className='sm:size-30' />
+                            </Link>
+                            <Link href='https://twitter.com/greenglobaltech'>
+                                <FaXTwitter size={20} className='sm:size-30' />
+                            </Link>
+                        </div>
                     </div>
                     {/* Section 3: Gallery */}
                     <div className='flex flex-col text-white'>

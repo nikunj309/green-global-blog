@@ -1,6 +1,6 @@
 import { AuthenticatedRequest, authenticate } from '@/middleware/authenticate'
 import PostModel from '@/models/postModel'
-import { uploadOnCloudinary } from '@/utils/cloudinary';
+import { deleteFromCloudinary, uploadOnCloudinary } from '@/utils/cloudinary';
 import dbConnect from '@/utils/dbConnection'
 import mongoose, { isValidObjectId } from 'mongoose';
 import multer from 'multer';
@@ -92,7 +92,6 @@ export async function POST(req: AuthenticatedRequest | any, res: NextApiResponse
 
 export async function DELETE(req: NextRequest, res: NextApiResponse) {
     try {
-        // Establish database connection
         await dbConnect()
 
         const { postId } =await  req.json()
@@ -102,10 +101,19 @@ export async function DELETE(req: NextRequest, res: NextApiResponse) {
         if (!postId) {
             return NextResponse.json({ error: 'Missing postId parameter' }, { status: 400 });
         }
-        // Validate postId format (optional)
-        // You can add validation logic here to ensure the postId is a valid object ID
 
-        // Delete the post
+        const posts = await PostModel.findById(postId) 
+
+        console.log("delete::: post", posts);
+        
+        const deletImage1FromCloudinary =  await deleteFromCloudinary(posts.image1)
+        const deletImage2FromCloudinary =  await deleteFromCloudinary(posts.image2)
+
+        console.log("delete from cloudinary :::: :: ",deletImage1FromCloudinary,deletImage2FromCloudinary);
+        
+        if (!deletImage2FromCloudinary && !deletImage1FromCloudinary) {
+            console.error('Error deleting image from Cloudinary');
+          }
         const deletedPost = await PostModel.findByIdAndDelete(postId);
 
         if (!deletedPost) {

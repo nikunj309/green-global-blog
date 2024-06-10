@@ -85,7 +85,7 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
                 });
 
                 if (response.ok) {
-                    router.push('/');
+                    router.push('/admin/dashbord');
                 } else {
                     const errorData = await response.json();
                     throw new Error(errorData.error || 'An error occurred'); 

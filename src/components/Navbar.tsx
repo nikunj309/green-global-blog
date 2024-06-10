@@ -85,9 +85,9 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className='flex flex-col sm:flex-row justify-between items-center py-2 px-6 sm:px-16 bg-neutral-700 text-white'>
-        {/* Your existing code for address, phone, and social icons */}
-        <div className='flex flex-col sm:flex-row items-center gap-4 sm:gap-10'>
+      {/* <div className='flex flex-col sm:flex-row justify-between items-center py-2 px-6 sm:px-16 bg-neutral-700 text-white'> */}
+       
+        {/* <div className='flex flex-col sm:flex-row items-center gap-4 sm:gap-10'>
            <div className='flex items-center gap-2'>
              <FaMapMarkerAlt size={20} className='sm:size-30' />
              <div className='text-sm sm:text-base'>
@@ -110,10 +110,9 @@ const Navbar = () => {
            <Link href='https://twitter.com/greenglobaltech'>
              <FaXTwitter size={20} className='sm:size-30' />
            </Link>
-           {/* <div className='text-sm sm:text-base'>facebook</div> */}
          </div>
-      </div>
-      <div className='flex flex-col sm:flex-row justify-between items-center py-4 px-6 sm:px-28 bg-white shadow-md hover:shadow-lg transition-shadow duration-300'>
+      </div> */}
+      <div className='flex flex-row sm:flex-row justify-between items-center py-4 px-6 sm:px-28 bg-white shadow-md hover:shadow-lg transition-shadow duration-300'>
         <div className='flex items-center mb-4 sm:mb-0'>
           <Image src={logo} alt="Green Global Technologies Logo" width={100} height={50} />
         </div>

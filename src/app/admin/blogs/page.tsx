@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AdminLayout from '@/components/AdminCmt/AdminLayout';
 import { CldUploadButton, CloudinaryUploadWidgetResults } from 'next-cloudinary';
@@ -15,7 +15,7 @@ const NewBlog = () => {
     // const [publicId, setPublicId] = useState("");
     // const [publicId2, setPublicId2] = useState("");
 
-    // const router = useRouter();
+    const router = useRouter();
 
     // const handleImageUpload1 = (result: CloudinaryUploadWidgetResults) => {
     //     console.log("result: ", result);
@@ -82,6 +82,15 @@ const NewBlog = () => {
     //         // Display an error message to the user (optional)
     //     }
     // };
+
+    useEffect(() => {
+     
+        const token = localStorage.getItem("token");
+        if (!token) {
+          router.push("/"); // Redirect to user dashboard if token is found
+          return;
+        }
+      }, []);
 
     return (
         <AdminLayout>
