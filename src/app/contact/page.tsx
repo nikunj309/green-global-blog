@@ -11,7 +11,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineLocationOn } from "react-icons/md";
 
-const page = () => {
+const Page = () => {
   const title = "Contact";
   const description =
     "Explore Expert Perspectives and Industry Trends in Rubber Recycling and Sustainable Practices";
@@ -212,4 +212,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
