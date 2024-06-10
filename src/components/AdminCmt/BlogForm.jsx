@@ -4,20 +4,20 @@ import { CldUploadButton } from 'next-cloudinary'; // Adjust the import as per y
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
-interface BlogFormProps {
-    initialData?: {
-        // slug: string;
-        id: string
-        title: string;
-        desc: string;
-        image1: string;
-        image2: string;
-        category: string;
-    };
-    buttonText: string;
-}
+// interface BlogFormProps {
+//     initialData?: {
+//         // slug: string;
+//         id: string
+//         title: string;
+//         desc: string;
+//         image1: string;
+//         image2: string;
+//         category: string;
+//     };
+//     buttonText: string;
+// }
 
-const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
+const BlogForm = ({ initialData, buttonText }) => {
     // console.log(initialData);
     
     const [title, setTitle] = useState('');
@@ -39,27 +39,27 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
     }, [initialData]);
 
 
-    const handleImageUpload1 = (result: any) => {
-        const info = result.info as object;
+    const handleImageUpload1 = (result) => {
+        const info = result.info ;
 
         if ("secure_url" in info && "public_id" in info) {
-            const url = info.secure_url as string;
-            const public_id = info.public_id as string;
+            const url = info.secure_url ;
+            const public_id = info.public_id ;
             setImage1(url);
         }
     };
 
-    const handleImageUpload2 = (result: any) => {
-        const info = result.info as object;
+    const handleImageUpload2 = (result) => {
+        const info = result.info ;
 
         if ("secure_url" in info && "public_id" in info) {
-            const url = info.secure_url as string;
-            const public_id = info.public_id as string;
+            const url = info.secure_url ;
+            const public_id = info.public_id ;
             setImage2(url);
         }
     };
 
-    const slugify = (str: string) =>
+    const slugify = (str) =>
 
         str
             .toLowerCase()
@@ -68,7 +68,7 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialData, buttonText }) => {
             .replace(/[\s_-]+/g, "-")
             .replace(/^-+|-+$/g, "");
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
        
             try {
