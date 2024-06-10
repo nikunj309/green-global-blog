@@ -106,8 +106,11 @@ export async function DELETE(req: NextRequest, res: NextApiResponse) {
 
         console.log("delete::: post", posts);
         
-        const deletImage1FromCloudinary =  await deleteFromCloudinary(posts.image1)
-        const deletImage2FromCloudinary =  await deleteFromCloudinary(posts.image2)
+        
+
+            const deletImage1FromCloudinary = posts &&  await deleteFromCloudinary(posts.image1)
+            const deletImage2FromCloudinary = posts && await deleteFromCloudinary(posts.image2)
+        
 
         console.log("delete from cloudinary :::: :: ",deletImage1FromCloudinary,deletImage2FromCloudinary);
         
