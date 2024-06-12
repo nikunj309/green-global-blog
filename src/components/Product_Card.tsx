@@ -15,7 +15,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Product_Card = ({ imageSrc, altText, title, description, application }) => {
+const Product_Card = ({ imageSrc, altText, title, description, application }: any) => {
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
       <div className="relative w-full h-48">
