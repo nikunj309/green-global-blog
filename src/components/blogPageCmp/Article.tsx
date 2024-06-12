@@ -10,6 +10,9 @@ const Article = ({ article }: any) => {
                 src={article.image1}
                 alt={article.title}
                 className="w-full"
+                // layout="fill"
+                // objectFit="cover"
+                // className="rounded-lg"
                 width={200}
                 height={100}
             />
@@ -30,3 +33,4 @@ const Article = ({ article }: any) => {
 };
 
 export default Article;
+
