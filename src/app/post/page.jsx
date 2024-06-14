@@ -197,7 +197,7 @@ const Page = ({ searchParams }) => {
     const [recentPosts, setRecentPosts] = useState([]);
     const title = "Blog";
     const description =
-        "Explore Expert Perspectives and Industry Trends in Rubber Recycling and Sustainable Practices";
+        "Transforming old tires into a greener tomorrow, one tire at a time";
 
 
     useEffect(() => {
@@ -233,8 +233,8 @@ const Page = ({ searchParams }) => {
             }
         };
 
-        fetchRecentPosts();
         fetchPosts();
+        fetchRecentPosts();
 
     }, [count, page]);
 

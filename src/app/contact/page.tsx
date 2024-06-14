@@ -14,7 +14,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 const Page = () => {
   const title = "Contact";
   const description =
-    "Explore Expert Perspectives and Industry Trends in Rubber Recycling and Sustainable Practices";
+    "Lets work together to create a greener future. Contact us today!";
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -67,10 +67,7 @@ const Page = () => {
             </div>
           </div>
           <p className="text-lg">
-            Cum sociis natoque penatibus et magnis dis parturient montes,
-            nascetur ridiculus mus. Fusce tempus odio vitae nibh semper, ac
-            venenatis massa mollis. Proin tempus, mauris eu facilisis feugiat,
-            nisi augue faucibus.
+          Thank you for your interest in Green Global and our sustainable tire recycling solutions. We welcome your inquiries, feedback, and collaboration opportunities. Please feel free to contact us using the information below:
           </p>
         </div>
 

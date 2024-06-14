@@ -1,7 +1,29 @@
+"use client"
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const AdminLayout = ({ children }: any) => {
+  const router = useRouter()
+  const logout = async () => {
+    try {
+        const response = await fetch('/api/users/logout', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        localStorage.setItem( 'token' ,"");
+        router.push('/')
+    
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
+};
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-indigo-600 text-white p-4">
@@ -22,6 +44,12 @@ const AdminLayout = ({ children }: any) => {
                 <Link href="/admin/blogs">
                   <p className="block py-2 px-4 hover:bg-gray-700">Create Blogs</p>
                 </Link>
+              </li>
+              <li>
+                {/* <Link href="/admin/blogs"> */}
+  
+                  <p className="block py-2 px-4 hover:bg-gray-700" onClick={logout}>Logout</p>
+                {/* </Link> */}
               </li>
             </ul>
           </nav>

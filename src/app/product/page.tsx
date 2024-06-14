@@ -148,7 +148,7 @@ const page = () => {
   ];
 
   const title = "Product";
-  const description = "Explore Expert Perspectives and Industry Trends in Rubber Recycling and Sustainable Practices"; 
+  const description = "Transforming tires into sustainable solutions for a greener future."; 
 
   return (
     <>

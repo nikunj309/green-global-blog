@@ -49,7 +49,7 @@ const page = () => {
       />
       <main className="flex justify-center items-center flex-col p-4 md:p-8">
         <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-          <div className="flex-1 m-10 p-10 bg-[#DDDDDD] shadow-lg">
+          <div className="flex-1 p-10 bg-[#DDDDDD] shadow-lg">
             <div className="flex">
               <div className="border-l-4 border-r-2 border-[#003D4D] mb-4 py-1 px-4">
                 <p className="text-xl font-bold text-[#323232]">
@@ -79,18 +79,19 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1 p-4">
-            <div className="mb-2">
+          <div className="flex-1">
+            <div className="mb-2 p-4">
               <span className="text-white px-4 py-1 bg-orange-400 m-2">
-                About us{" "}
+                About us
               </span>
-              Welcome to Green Global, your trusted partner in sustainable tire recycling solutions. We are committed to reducing the environmental impact of used rubber tires by recycling and repurposing them into valuable products. Our state-of-the-art facilities and innovative processes ensure that every tire we handle is transformed into high-quality materials like crumb rubber, rubber mulch, and rubberized asphalt.
-              At Green Global, sustainability is at the core of everything we do. We believe in promoting a circular economy where resources are reused and repurposed, minimizing waste and conserving natural resources. Our team of dedicated experts is passionate about environmental stewardship and strives to make a positive impact on our planet.
-              Through our efforts, we aim to not only provide eco-friendly products but also raise awareness about the importance of tire recycling and sustainable practices. Join us in our mission to create a cleaner, greener world for generations to come.
-
+              <p className='text-sm md:text-base flex-wrap'>
+                Welcome to Green Global, your trusted partner in sustainable tire recycling solutions. We are committed to reducing the environmental impact of used rubber tires by recycling and repurposing them into valuable products. Our state-of-the-art facilities and innovative processes ensure that every tire we handle is transformed into high-quality materials like crumb rubber, rubber mulch, and rubberized asphalt.
+                <br /><br />
+                At Green Global, sustainability is at the core of everything we do. We believe in promoting a circular economy where resources are reused and repurposed, minimizing waste and conserving natural resources. Our team of dedicated experts is passionate about environmental stewardship and strives to make a positive impact on our planet.
+                <br /><br />
+                Through our efforts, we aim to not only provide eco-friendly products but also raise awareness about the importance of tire recycling and sustainable practices. Join us in our mission to create a cleaner, greener world for generations to come.
+              </p>
             </div>
-            {/* <div className="text-lg mb-2">Nurture Relationships</div>
-            <div className="text-lg">Building Relationships</div> */}
           </div>
         </div>
 

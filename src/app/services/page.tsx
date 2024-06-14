@@ -17,19 +17,19 @@ import Link from 'next/link';
 const page = () => {
 
   const services = [
-    { icon: rubber_recycling_consultation, title: 'RUBBER RECYCLING CONSULTATION', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
-    { icon: reclaim_rubber_manufacturing, title: 'RECLAIM RUBBER MANUFACTURING', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
-    { icon: rubber_crumb_production, title: 'RUBBER CRUMB PRODUCTION', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
-    { icon: rubber_chip_manufacturing, title: 'RUBBER CHIP MANUFACTURING', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
-    { icon: custom_rubber_compounding, title: 'CUSTOM RUBBER COMPOUNDING', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
-    { icon: rubber_recycling_equipment_sales, title: 'RUBBER RECYCLING EQUIPMENT SALES', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
-    { icon: rubber_waste_management_solutions, title: 'RUBBER WASTE MANAGEMENT SOLUTIONS', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
-    { icon: projects_advertising, title: 'PROJECTS ADVERTISING', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
-    { icon: projects_installation, title: 'PROJECTS INSTALLATION', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
+    {slug:'s1', icon: rubber_recycling_consultation, title: 'RUBBER RECYCLING CONSULTATION', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
+    {slug:2, icon: reclaim_rubber_manufacturing, title: 'RECLAIM RUBBER MANUFACTURING', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
+    {slug:3, icon: rubber_crumb_production, title: 'RUBBER CRUMB PRODUCTION', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
+    {slug:4, icon: rubber_chip_manufacturing, title: 'RUBBER CHIP MANUFACTURING', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
+    {slug:5, icon: custom_rubber_compounding, title: 'CUSTOM RUBBER COMPOUNDING', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
+    {slug:6, icon: rubber_recycling_equipment_sales, title: 'RUBBER RECYCLING EQUIPMENT SALES', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
+    {slug:7, icon: rubber_waste_management_solutions, title: 'RUBBER WASTE MANAGEMENT SOLUTIONS', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
+    {slug:8, icon: projects_advertising, title: 'PROJECTS ADVERTISING', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
+    {slug:9, icon: projects_installation, title: 'PROJECTS INSTALLATION', description: 'Duis at suscipit massa. Etiam quis mollis arcu. Integer sit amet ex eros' },
   ];
 
   const title = "Services";
-  const description = "Explore Expert Perspectives and Industry Trends in Rubber Recycling and Sustainable Practices"; 
+  const description = "Transforming old tires into new possibilities for a sustainable future"; 
 
   return (
     <>
@@ -39,7 +39,7 @@ const page = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
              
-              <ServicesCard key={index} icon={service.icon} title={service.title} description={service.description} />
+              <ServicesCard key={index} icon={service.icon} title={service.title} slug={service.slug} description={service.description} />
          
             ))}
           </div>

@@ -11,7 +11,7 @@ const HomeAboutSection = () => {
                 <p className="text-lg md:text-xl font-normal font-montserrat mb-4 opacity-50">We are a Leading Global Tire Management/Recycling Company, Committed to The Environment</p>
                 <p className="text-base md:text-lg font-normal font-montserrat mb-4 opacity-50">Welcome to Green Global, your trusted partner in sustainable tire recycling solutions. We specialize in the responsible disposal and recycling of old and used rubber tires, transforming them into valuable resources like crumb rubber. Our mission is to promote environmental sustainability through innovative recycling practices. Join us in our journey to create a greener planet.</p>
                 <Link href='/about'>
-                <button className="mt-8 px-6 md:px-8 py-2 md:py-3 bg-[#323232] text-white font-bold rounded-sm text-sm md:text-base hover:bg-blue-700">
+                <button className="mt-8 px-6 md:px-8 py-2 md:py-3 bg-[#323232] text-white font-bold rounded-sm text-sm md:text-base hover:bg-[#696464]">
                     Learn more
                 </button>
                 </Link>

@@ -21,7 +21,7 @@ const HeroSection = () => {
                 <p className="text-sm md:text-base font-inter">that benefits both the community</p>
                 <p className="text-sm md:text-base font-inter">and the environment</p>
                 <Link href='/services'>
-                <button className="mt-8 px-6 md:px-8 py-2 md:py-3 bg-[#323232] text-white font-bold rounded-sm text-sm md:text-base hover:bg-blue-700">
+                <button className="mt-8 px-6 md:px-8 py-2 md:py-3 bg-[#323232] text-white font-bold rounded-sm text-sm md:text-base hover:bg-[#696464]">
                     Explore
                 </button>
                 </Link>
