@@ -17,7 +17,7 @@ export default function Home() {
       </main>
       <div>
         <HomeAboutSection />
-        <div className="flex flex-col md:flex-row md:gap-36 gap-8 p-12 items-center justify-center">
+        {/* <div className="flex flex-col md:flex-row md:gap-36 gap-8 p-12 items-center justify-center">
           <ComponyDetailsCard
             number="72+"
             title="Professional Experts"
@@ -33,7 +33,7 @@ export default function Home() {
             title="World-wide Clients"
             description="Building Bridges: Connecting World-Class Products with Clients Across Continents"
           />
-        </div>
+        </div> */}
         <ServicesAndSolutionCmp />
         <NewsAndAnouncement />
         <BottomBanner />

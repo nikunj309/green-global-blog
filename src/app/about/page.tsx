@@ -36,9 +36,9 @@ const page = () => {
     },
   ];
 
-  const title = "About Global Green Technology";
+  const title = "About Global Green Technologies";
   const description =
-    "Welcome to Global Green Technology, where innovation meets sustainability. Established with a vision to revolutionize the rubber recycling industry, we have grown from humble beginnings to become a leading manufacturer of eco-friendly rubber products.";
+    "Welcome to Global Green Technologies, where innovation meets sustainability. Established with a vision to revolutionize the rubber recycling industry, we have grown from humble beginnings to become a leading manufacturer of eco-friendly rubber products.";
 
   return (
     <>
@@ -53,18 +53,18 @@ const page = () => {
             <div className="flex">
               <div className="border-l-4 border-r-2 border-[#003D4D] mb-4 py-1 px-4">
                 <p className="text-xl font-bold text-[#323232]">
-                  About Global Green Technology
+                  About Global Green Technologies
                 </p>
               </div>
             </div>
             <div className="mb-8 text-[#003D4D] font-extrabold text-5xl">
-              Leading <br /> Company For Over 20+ <br /> Years.
+              Leading <br /> Company For Over 5+ <br /> Years.
             </div>
-            <div className="flex bg-[#003D4D]  p-4">
-              <div className="mr-4">
+            {/* <div className="flex bg-[#003D4D]  p-4"> */}
+              {/* <div className="mr-4">
                 <Image src={icon_left} alt='left icon' />
-              </div>
-              <div className="border-l-2 border-white pl-4">
+              </div> */}
+              {/* <div className="border-l-2 border-white pl-4">
                 <p className="text-lg text-white m-2">
                   <span className="text-orange-600">#1</span> Best Service
                 </p>
@@ -76,8 +76,8 @@ const page = () => {
                   4.8/5 for the{" "}
                   <span className="text-orange-600">Recycle </span> services
                 </p>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </div>
           <div className="flex-1">
             <div className="mb-2 p-4">

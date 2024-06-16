@@ -7,8 +7,8 @@ const HeroSection = () => {
     return (
         <>
             <div className="absolute inset-0 z-0">
-                <Image src={herobanner} alt="herobanner" layout="fill" objectFit="cover" className="opacity-70" />
-                <div className="absolute inset-0 bg-white opacity-20"></div>
+                <Image src={herobanner} alt="herobanner" layout="fill" objectFit="cover" className="opacity-95" />
+                <div className="absolute inset-0 bg-white opacity-10"></div>
             </div>
             <div className="relative z-10 text-center text-black">
                 <div>

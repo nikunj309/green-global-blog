@@ -12,7 +12,7 @@ const NewsCard = ({ imageSrc, altText, date, title, description, buttonText, but
         <p className="text-sm text-gray-500">{date}</p>
         <p className="text-xl font-semibold text-gray-800 mb-2">{title}</p>
         <p className="text-gray-700 text-base">{description}</p>
-        <button className={`mt-4 bg-[${buttonBgColor}] hover:bg-[#ffffff] text-white hover:text-black hover:border-2 font-bold py-2 px-4 rounded shadow-md`}>{buttonText}</button>
+        {/* <button className={`mt-4 bg-[${buttonBgColor}] hover:bg-[#ffffff] text-white hover:text-black hover:border-2 font-bold py-2 px-4 rounded shadow-md`}>{buttonText}</button> */}
       </div>
     </div>
   );

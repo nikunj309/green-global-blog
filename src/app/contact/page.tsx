@@ -10,6 +10,7 @@ import CommonHeroSectionCard from "@/components/CommonHeroSectionCard";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineLocationOn } from "react-icons/md";
+import Link from "next/link";
 
 const Page = () => {
   const title = "Contact";
@@ -73,6 +74,7 @@ const Page = () => {
 
         <div className="w-full mx-auto mb-8 bg-white shadow-lg px-4 py-6 md:px-32 md:py-10">
           <div className="flex flex-col md:flex-row gap-6">
+            <Link href='https://maps.app.goo.gl/czByeqgcGkxXNFzeA'>
             <div className="flex items-start gap-4">
               {/* <Image src={location} width={30} height={30} alt="Location icon" /> */}
               <MdOutlineLocationOn   size={40} className='sm:size-30' />
@@ -84,22 +86,23 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              {/* <Image src={phone} width={30} height={30} alt="Phone icon" /> */}
+              </Link>
+            {/* <div className="flex items-start gap-4"> */}
+              <a href={`tel:+919879948500`} className="flex items-start gap-4">
               <FiPhone size={40} className='sm:size-30' />
               <div>
                 <div className="text-lg font-semibold">CALL US</div>
                 <div className="text-base">Support: +91 98799 48500</div>
               </div>
-            </div>
-            <div className="flex items-start gap-4">
-              {/* <Image src={emailIcon} width={30} height={30} alt="Email icon" /> */}
+              </a>
+            {/* </div> */}
+            <a href={`mailto:info@greenglobaltechnologies.in`} className="flex items-start gap-4">
               <HiOutlineMail  size={40} className='sm:size-30' />
               <div>
                 <div className="text-lg font-semibold">EMAIL US</div>
                 <div className="text-base">info@greenglobaltechnologies.in</div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 

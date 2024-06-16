@@ -123,7 +123,7 @@ const Footer = () => {
                         <div className='bg-[#323232] h-1 w-24 mb-2'></div>
                         <p className='font-normal opacity-45 font-inter text-xs sm:text-sm w-[80%] mb-4'>World-class waste management and environmental protection system that benefits both the community and the environment</p>
                         <Link href='/contact'>
-                        <button className={`bg-[#323232] w-48 hover:bg-[#ffffff] text-white hover:text-black hover:border-2 font-bold py-2 px-4 rounded shadow-md`}>Contact Now</button>
+                            <button className={`bg-[#323232] w-48 hover:bg-[#ffffff] text-white hover:text-black hover:border-2 font-bold py-2 px-4 rounded shadow-md`}>Contact Now</button>
                         </Link>
                     </div>
                     {/* Section 2: Contact Us */}
@@ -146,11 +146,10 @@ const Footer = () => {
                         </div>
                     </div>
                     {/* Section 3: Gallery */}
-                    <div className='flex flex-col text-white'>
+                    {/* <div className='flex flex-col text-white'>
                         <p className='font-medium font-inter text-xl sm:text-2xl mb-2'>Gallery</p>
                         <div className='bg-[#323232] h-1 w-24 mb-2'></div>
                         <div className='flex flex-wrap gap-2'>
-                            {/* Add gallery images */}
                             <div className='w-14 h-14 bg-white rounded-md'></div>
                             <div className='w-14 h-14 bg-white rounded-md'></div>
                             <div className='w-14 h-14 bg-white rounded-md'></div>
@@ -158,7 +157,7 @@ const Footer = () => {
                             <div className='w-14 h-14 bg-white rounded-md'></div>
                             <div className='w-14 h-14 bg-white rounded-md'></div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             {/* Footer Bottom */}
