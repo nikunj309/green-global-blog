@@ -132,6 +132,7 @@ const Footer = () => {
                         <div className='bg-[#323232] h-1 w-24 mb-2'></div>
                         <p className='font-normal opacity-45 font-inter text-xs sm:text-sm w-full '>+91 98799 48500</p>
                         <p className='font-normal opacity-45 font-inter text-xs mt-4'>info@greenglobaltechnologies.in</p>
+                        <p className='font-normal opacity-45 font-inter text-xs mt-4'>greenglobaltechnologies2019@gmail.com</p>
                         <p className='font-normal opacity-45 font-inter text-xs mt-4 w-[50%]'>Green Global Technologies, Moje Pratapnagar, Ta: Savli, Dis: Vadodara, Gujarat - 391520</p>
                         <div className='flex items-center gap-6 mt-3'>
                             <Link href='https://www.facebook.com/profile.php?id=61558428737488'>
@@ -163,7 +164,7 @@ const Footer = () => {
             {/* Footer Bottom */}
             <div className='bg-[#171717]'>
                 <div className='bg-white h-0.5'></div>
-                <p className='text-base font-normal font-inter py-2 items-center text-white text-center mt-2'>2024 @ Copyright - All Rights Reserved</p>
+                <p className='text-base font-normal font-inter py-2 items-center text-white text-center mt-2'>2019 @ Copyright - All Rights Reserved</p>
             </div>
         </>
     )

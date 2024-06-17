@@ -79,7 +79,7 @@ const Page = () => {
               {/* <Image src={location} width={30} height={30} alt="Location icon" /> */}
               <MdOutlineLocationOn   size={40} className='sm:size-30' />
               <div>
-                <div className="text-lg font-semibold">Factory Address</div>
+                <div className="text-lg font-semibold">FACTORY ADDRESS</div>
                 <div className="text-base">
                   Green Global Technologies, SR. NO: 74/1, Moje: Pratapnagar, Taluka: Savli, Dis:
                   Vadodara, Gujarat - 391520

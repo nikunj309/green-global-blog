@@ -91,7 +91,7 @@ const page = () => {
     },
     {
       imageSrc: image3,
-      altText: 'Used tyre scrap rubber crimbs',
+      altText: 'Used tyre scrap- crumb rubber',
       title: 'Used tyre scrap rubber crimbs',
       description: 'Durable and slip-resistant pavers made from recycled rubber.',
       application: 'Outdoor walkways, driveways, patios, and playgrounds.'
