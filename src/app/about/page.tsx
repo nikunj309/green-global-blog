@@ -85,9 +85,9 @@ const page = () => {
                 About us
               </span>
               <p className='text-sm md:text-base flex-wrap'>
-                Welcome to Green Global, your trusted partner in sustainable tire recycling solutions. We are committed to reducing the environmental impact of used rubber tires by recycling and repurposing them into valuable products. Our state-of-the-art facilities and innovative processes ensure that every tire we handle is transformed into high-quality materials like crumb rubber, rubber mulch, and rubberized asphalt.
+                Welcome to Green Global Technologies, your trusted partner in sustainable tire recycling solutions. We are committed to reducing the environmental impact of used rubber tires by recycling and repurposing them into valuable products. Our state-of-the-art facilities and innovative processes ensure that every tire we handle is transformed into high-quality materials like crumb rubber, rubber mulch, and rubberized asphalt.
                 <br /><br />
-                At Green Global, sustainability is at the core of everything we do. We believe in promoting a circular economy where resources are reused and repurposed, minimizing waste and conserving natural resources. Our team of dedicated experts is passionate about environmental stewardship and strives to make a positive impact on our planet.
+                At Green Global Technologies, sustainability is at the core of everything we do. We believe in promoting a circular economy where resources are reused and repurposed, minimizing waste and conserving natural resources. Our team of dedicated experts is passionate about environmental stewardship and strives to make a positive impact on our planet.
                 <br /><br />
                 Through our efforts, we aim to not only provide eco-friendly products but also raise awareness about the importance of tire recycling and sustainable practices. Join us in our mission to create a cleaner, greener world for generations to come.
               </p>

@@ -11,7 +11,7 @@ const BottomBanner = () => {
             <div className="absolute inset-0 bg-black opacity-60"></div>
             <div className="absolute inset-0 flex items-center justify-center">
                 <p className="text-white text-2xl md:text-4xl font-normal font-Moul text-center md:max-w-[20%] max-w-[70%]">
-                    “Create Real Transformation with a Global Green Technology”
+                    “Create Real Transformation with a Green Global Technologies”
                 </p>
             </div>
         </div>
