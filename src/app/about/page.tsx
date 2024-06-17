@@ -36,9 +36,9 @@ const page = () => {
     },
   ];
 
-  const title = "About Global Green Technologies";
+  const title = "About Green Global Technologies";
   const description =
-    "Welcome to Global Green Technologies, where innovation meets sustainability. Established with a vision to revolutionize the rubber recycling industry, we have grown from humble beginnings to become a leading manufacturer of eco-friendly rubber products.";
+    "Welcome to Green Global Technologies, where innovation meets sustainability. Established with a vision to revolutionize the rubber recycling industry, we have grown from humble beginnings to become a leading manufacturer of eco-friendly rubber products.";
 
   return (
     <>
@@ -53,7 +53,7 @@ const page = () => {
             <div className="flex">
               <div className="border-l-4 border-r-2 border-[#003D4D] mb-4 py-1 px-4">
                 <p className="text-xl font-bold text-[#323232]">
-                  About Global Green Technologies
+                  About Green Global Technologies
                 </p>
               </div>
             </div>
