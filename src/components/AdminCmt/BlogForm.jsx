@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { CldUploadButton } from 'next-cloudinary'; // Adjust the import as per your setup
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import Image from 'next/image';
 
 // interface BlogFormProps {
 //     initialData?: {
@@ -19,12 +20,13 @@ import axios from 'axios';
 
 const BlogForm = ({ initialData, buttonText }) => {
     // console.log(initialData);
-    
+
     const [title, setTitle] = useState('');
     const [desc, setDescription] = useState('');
     const [image1, setImage1] = useState('');
     const [image2, setImage2] = useState('');
     const [category, setCategory] = useState('');
+    const [loading, setLoading] = useState(false)
 
     const router = useRouter();
 
@@ -40,21 +42,21 @@ const BlogForm = ({ initialData, buttonText }) => {
 
 
     const handleImageUpload1 = (result) => {
-        const info = result.info ;
+        const info = result.info;
 
         if ("secure_url" in info && "public_id" in info) {
-            const url = info.secure_url ;
-            const public_id = info.public_id ;
+            const url = info.secure_url;
+            const public_id = info.public_id;
             setImage1(url);
         }
     };
 
     const handleImageUpload2 = (result) => {
-        const info = result.info ;
+        const info = result.info;
 
         if ("secure_url" in info && "public_id" in info) {
-            const url = info.secure_url ;
-            const public_id = info.public_id ;
+            const url = info.secure_url;
+            const public_id = info.public_id;
             setImage2(url);
         }
     };
@@ -70,35 +72,39 @@ const BlogForm = ({ initialData, buttonText }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-       
-            try {
-                const response = await fetch('/api/post', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        title,
-                        slug: slugify(title),
-                        desc,
-                        image1,
-                        image2,
-                        category
-                    })
-                });
+        setLoading(true)
 
-                if (response.ok) {
-                    router.push('/admin/dashbord');
-                } else {
-                    const errorData = await response.json();
-                    throw new Error(errorData.error || 'An error occurred'); 
-                }
-            } catch (error) {
-                console.error('Error creating post:', error);
+        try {
+            const response = await fetch('/api/post', {
+                method: 'POST',
+                body: JSON.stringify({
+                    title,
+                    slug: slugify(title),
+                    desc,
+                    image1,
+                    image2,
+                    category
+                })
+            });
+
+            if (response.ok) {
+                setLoading(false)
+                router.push('/admin/dashbord');
+            } else {
+                const errorData = await response.json();
+                setLoading(false)
+                throw new Error(errorData.error || 'An error occurred');
             }
-        
+        } catch (error) {
+            console.error('Error creating post:', error);
+            setLoading(false)
+        }
+
 
     };
 
-    const handleUpdate = async() => {
-       
+    const handleUpdate = async () => {
+
         const updateData = {
             title,
             slug: slugify(title),
@@ -108,11 +114,11 @@ const BlogForm = ({ initialData, buttonText }) => {
             category
         };
 
-        console.log("-------------------",updateData);
-        
+        console.log("-------------------", updateData);
+        setLoading(true)
         try {
             const response = await fetch(`/api/post/${initialData.id}`, {
-                method: 'PATCH', 
+                method: 'PATCH',
                 body: JSON.stringify(updateData),
                 headers: {
                     'Content-Type': 'application/json'
@@ -120,12 +126,15 @@ const BlogForm = ({ initialData, buttonText }) => {
             });
 
             if (response.ok) {
+                setLoading(false)
                 router.push('/');
             } else {
                 const errorData = await response.json();
+                setLoading(false)
                 throw new Error(errorData.error || 'An error occurred');
             }
         } catch (error) {
+            setLoading(false)
             console.error('Error updating post:', error);
         }
     }
@@ -167,7 +176,13 @@ const BlogForm = ({ initialData, buttonText }) => {
                         >
                             Upload Image 1
                         </CldUploadButton>
+
                     </label>
+                    {image1 && (
+                        <div className="mt-2">
+                            <img src={image1} alt="Image 1" className="w-32 h-32 object-cover rounded-md" />
+                        </div>
+                    )}
                 </div>
                 <div className="mb-6">
                     <label>
@@ -178,7 +193,13 @@ const BlogForm = ({ initialData, buttonText }) => {
                         >
                             Upload Image 2
                         </CldUploadButton>
+
                     </label>
+                    {image2 && (
+                        <div className="mt-2">
+                            <img src={image2} alt="Image 2" className="w-32 h-32 object-cover rounded-md" />
+                        </div>
+                    )}
                 </div>
                 <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
